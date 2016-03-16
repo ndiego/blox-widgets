@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Blox - Widgets Addon
  * Plugin URI:  https://www.bloxwp.com
- * Description: Enables the Widgets Addon for Blox.
- * Author:      Nicholas Diego
+ * Description: Enables the Widgets Addon for Blox
+ * Author:      Nick Diego
  * Author URI:  http://www.outermostdesign.com
  * Version:     1.0.0
  * Text Domain: blox-widgets
@@ -127,7 +127,7 @@ function blox_load_widgets_addon() {
 			add_action( 'blox_print_content_widgets', array( $this, 'print_widgets_content' ), 10, 4 );
 	
 			// Let Blox know the addon is active
-			add_filter( 'blox_active_addons', array( $this, 'notify_of_active_addon' ), 10 );
+			add_filter( 'blox_get_active_addons', array( $this, 'notify_of_active_addon' ), 10 );
 		}
 
 
@@ -471,7 +471,7 @@ function blox_load_widgets_addon() {
 		 */
 		public function notify_of_active_addon( $addons ) {
 
-			$addons['blox-widgets'] = __( 'Blox Widgets Addon', 'blox-widgets' );
+			$addons['widgets_addon'] = __( 'Blox Widgets Addon', 'blox-widgets' );
 			return $addons;
 		}
 
