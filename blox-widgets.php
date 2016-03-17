@@ -471,7 +471,7 @@ function blox_load_widgets_addon() {
 		 */
 		public function notify_of_active_addon( $addons ) {
 
-			$addons['widgets_addon'] = __( 'Blox Widgets Addon', 'blox-widgets' );
+			$addons['widgets_addon'] = __( 'Widgets Addon', 'blox-widgets' );
 			return $addons;
 		}
 
