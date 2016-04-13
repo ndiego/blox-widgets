@@ -1,6 +1,6 @@
 ## Widgets Addon – A premium extension for Blox
 
-The Widgets Addon is an extension of the premium Wordpress plugin Blox. More information on Blox can be found at [www.bloxwp.com](https://www.bloxwp.com/documentation/?utm_source=blox-widgets&utm_medium=plugin&utm_content=github-readme-links&utm_campaign=Blox_Addon_Links). You are free to download and use this extension, but understand that automatic updates and support require a paid Blox license. 
+The Widgets Addon is an extension of the premium Wordpress plugin Blox. It adds the "Widgets" content type, thereby allowing you to add any number of widgets to a content block. More information on Blox can be found at [www.bloxwp.com](https://www.bloxwp.com/?utm_source=blox-widgets&utm_medium=plugin&utm_content=github-readme-links&utm_campaign=Blox_Addon_Links). You are free to download and use this extension, but understand that automatic updates and support require a paid Blox license. 
 
 **Please Note:** This extension will not work with [Blox Lite](https://wordpress.org/support/plugin/blox-lite), the free version of Blox.
 

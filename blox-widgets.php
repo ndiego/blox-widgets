@@ -5,7 +5,7 @@
  * Description: Enables the Widgets Addon for Blox
  * Author:      Nick Diego
  * Author URI:  http://www.outermostdesign.com
- * Version:     1.0.0
+ * Version:     0.9.0
  * Text Domain: blox-widgets
  * Domain Path: languages
  *
@@ -49,7 +49,7 @@ function blox_load_widgets_addon() {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @package Blox
+	 * @package Blox - Widgets Addon
 	 * @author  Nick Diego
 	 */
 	class Blox_Widgets_Main {
@@ -185,8 +185,7 @@ function blox_load_widgets_addon() {
 			// Setup the license
 			if ( class_exists( 'Blox_License' ) ) {
 				$blox_widgets_addon_license = new Blox_License( __FILE__, 'Widgets Addon', '1.0.0', 'Nicholas Diego', 'blox_widgets_addon_license_key', 'https://www.bloxwp.com', 'addons' );
-			}
-			
+			}	
 		}
 		
 		
@@ -212,7 +211,7 @@ function blox_load_widgets_addon() {
 		}
 
 
-		/* Enabled the "custom" content (i.e. WP Editor) option in the plugin
+		/* Enables the "Widget" content option in the plugin
 		 *
 		 * @since 1.0.0
 		 *
@@ -224,7 +223,7 @@ function blox_load_widgets_addon() {
 		}
 
 
-		/* Prints all of the editor ralated settings fields
+		/* Prints all of the widget ralated settings fields
 		 *
 		 * @since 1.0.0
 		 *
@@ -302,7 +301,7 @@ function blox_load_widgets_addon() {
 		}
 
 
-		/* Saves all of the editor ralated settings
+		/* Saves all of the widget ralated settings
 		 *
 		 * @since 1.0.0
 		 *
@@ -320,7 +319,7 @@ function blox_load_widgets_addon() {
 		}
 
 
-		/* Prints the editor content to the frontend
+		/* Prints the widget content to the frontend
 		 *
 		 * @since 1.0.0
 		 *
@@ -382,11 +381,19 @@ function blox_load_widgets_addon() {
 	
 			// Closing widget area markup
 			echo $args['after'];
-
 		}
 
 
-
+		/* Prints the widget content to the frontend
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param string $index	      The slug for the widget array
+		 * @param array $content_data Array of all content data
+		 * @param int $id             The block id
+		 * @param array $block        NEED DESCRIPTION
+		 * @param string $global      The block state
+		 */
 		public function blox_display_widgets( $index, $content_data, $block_id, $block, $global ) {
 	
 			global $wp_registered_sidebars, $wp_registered_widgets;
@@ -462,7 +469,6 @@ function blox_load_widgets_addon() {
 			}
 		}
 
-	
 	
 		/**
 		 * Let Blox know this extension has been activated.

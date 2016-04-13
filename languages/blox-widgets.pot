@@ -1,0 +1,80 @@
+# Copyright (C) 2016 Blox - Widgets Addon
+# This file is distributed under the same license as the Blox - Widgets Addon package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Blox - Widgets Addon 0.9.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/blox-widgets\n"
+"POT-Creation-Date: 2016-04-13 11:32:04+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: blox-widgets.php:169
+msgid "Documentation"
+msgstr ""
+
+#: blox-widgets.php:206
+msgid "Blox Widgets"
+msgstr ""
+
+#: blox-widgets.php:207
+msgid "Place all widgets you would like to make available to Blox here. When building a widget content block, you will be able to toggle which widgets you would like to use. However, the display order of the widgets is determined here."
+msgstr ""
+
+#: blox-widgets.php:221
+msgid "Widgets"
+msgstr ""
+
+#: blox-widgets.php:243
+msgid "Widgets Settings"
+msgstr ""
+
+#: blox-widgets.php:245
+msgid "Available Widgets"
+msgstr ""
+
+#: blox-widgets.php:288
+msgid "Select All"
+msgstr ""
+
+#: blox-widgets.php:288
+msgid "Unselect All"
+msgstr ""
+
+#: blox-widgets.php:291
+msgid "To add more widgets, head on over to the %1$sWidgets%5$s page and add a few widgets to the %2$sBlox Widgets%3$s widget area. The order in which selected widget are shown on the frontend is managed on the Widgets page. For more information, check out the %4$sWidgets Documentation%5$s"
+msgstr ""
+
+#: blox-widgets.php:294
+msgid "It doesn't look like you have added any widgets yet. Head on over to the %1$sWidgets%5$s page and add a few widgets to the %2$sBlox Widgets%3$s widget area. They will then show up here and you can choose the ones you want to use. For more information, check out the %4$sWidgets Documentation%5$s"
+msgstr ""
+
+#: blox-widgets.php:374
+msgid "You forgot to select some widgets to display!"
+msgstr ""
+
+#: blox-widgets.php:480
+msgid "Widgets Addon"
+msgstr ""
+#. Plugin Name of the plugin/theme
+msgid "Blox - Widgets Addon"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://www.bloxwp.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Enables the Widgets Addon for Blox"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Nick Diego"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.outermostdesign.com"
+msgstr ""
