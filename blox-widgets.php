@@ -70,7 +70,7 @@ function blox_load_widgets_addon() {
 		 *
 		 * @var string
 		 */
-		public $version = '1.0.0';
+		public $version = '0.9.0';
 
 		/**
 		 * The name of the plugin.
@@ -79,7 +79,7 @@ function blox_load_widgets_addon() {
 		 *
 		 * @var string
 		 */
-		public $plugin_name = 'Blox - Widgets Addon';
+		public $plugin_name = 'Widgets Addon';
 		
 		/**
 		 * Unique plugin slug identifier.
@@ -184,7 +184,7 @@ function blox_load_widgets_addon() {
 			
 			// Setup the license
 			if ( class_exists( 'Blox_License' ) ) {
-				$blox_widgets_addon_license = new Blox_License( __FILE__, 'Widgets Addon', '1.0.0', 'Nicholas Diego', 'blox_widgets_addon_license_key', 'https://www.bloxwp.com', 'addons' );
+				$blox_widgets_addon_license = new Blox_License( __FILE__, $this->plugin_name, $this->version, 'Nicholas Diego', 'blox_widgets_addon_license_key', 'https://www.bloxwp.com', 'addons' );
 			}	
 		}
 		
