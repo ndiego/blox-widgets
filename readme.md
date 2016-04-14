@@ -8,7 +8,7 @@ The Widgets Addon is an extension of the premium Wordpress plugin Blox. It adds 
 
 There are a number of ways you can get help with the Widgets Addon:
 
-* Visit the plugin [Documentation](https://www.bloxwp.com/documentation/?utm_source=blox-widgets&utm_medium=plugin&utm_content=github-readme-links&utm_campaign=Blox_Plugin_Links).
+* Visit the plugin [Documentation](https://www.bloxwp.com/documentation/widgets?utm_source=blox-widgets&utm_medium=plugin&utm_content=github-readme-links&utm_campaign=Blox_Plugin_Links).
 * Direct support requires a paid Blox license. Submit a support ticket through [Your Account](https://www.bloxwp.com/your-account/?utm_source=blox-widgets&utm_medium=plugin&utm_content=github-readme-links&utm_campaign=Blox_Plugin_Links) on www.bloxwp.com. 
 
 ### Find a bug or have a feature request?

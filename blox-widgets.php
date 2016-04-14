@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Blox - Widgets Addon
- * Plugin URI:  https://www.bloxwp.com
+ * Plugin URI:  https://www.bloxwp.com/addons/widgets
  * Description: Enables the Widgets Addon for Blox
  * Author:      Nick Diego
  * Author URI:  http://www.outermostdesign.com
