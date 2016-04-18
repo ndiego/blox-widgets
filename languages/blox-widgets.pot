@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the Blox - Widgets Addon package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Blox - Widgets Addon 0.9.0\n"
+"Project-Id-Version: Blox - Widgets Addon 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/blox-widgets\n"
-"POT-Creation-Date: 2016-04-13 11:32:04+00:00\n"
+"POT-Creation-Date: 2016-04-18 01:56:58+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -45,7 +45,7 @@ msgid "Unselect All"
 msgstr ""
 
 #: blox-widgets.php:291
-msgid "To add more widgets, head on over to the %1$sWidgets%5$s page and add a few widgets to the %2$sBlox Widgets%3$s widget area. The order in which selected widget are shown on the frontend is managed on the Widgets page. For more information, check out the %4$sWidgets Documentation%5$s"
+msgid "To add more widgets, navigate to the admin %1$sWidgets%5$s page and place additional widgets in the %2$sBlox Widgets%3$s widget area. The order that selected widget are shown on the frontend is managed on the Widgets page. For more information, review the widgets %4$sdocumentation%5$s."
 msgstr ""
 
 #: blox-widgets.php:294
@@ -64,7 +64,7 @@ msgid "Blox - Widgets Addon"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://www.bloxwp.com"
+msgid "https://www.bloxwp.com/addons/widgets"
 msgstr ""
 
 #. Description of the plugin/theme
