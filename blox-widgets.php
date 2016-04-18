@@ -5,7 +5,7 @@
  * Description: Enables the Widgets Addon for Blox
  * Author:      Nick Diego
  * Author URI:  http://www.outermostdesign.com
- * Version:     0.9.0
+ * Version:     1.0.0
  * Text Domain: blox-widgets
  * Domain Path: languages
  *
@@ -70,7 +70,7 @@ function blox_load_widgets_addon() {
 		 *
 		 * @var string
 		 */
-		public $version = '0.9.0';
+		public $version = '1.0.0';
 
 		/**
 		 * The name of the plugin.
@@ -288,7 +288,7 @@ function blox_load_widgets_addon() {
 								<a class="blox-checkbox-select-all" href="#"><?php _e( 'Select All', 'blox-widgets' ); ?></a> <a class="blox-checkbox-select-none" href="#"><?php _e( 'Unselect All', 'blox-widgets' ); ?></a>
 							</div>
 							<div class="blox-description" style="margin-top:15px">
-								<?php echo sprintf( __( 'To add more widgets, head on over to the %1$sWidgets%5$s page and add a few widgets to the %2$sBlox Widgets%3$s widget area. The order in which selected widget are shown on the frontend is managed on the Widgets page. For more information, check out the %4$sWidgets Documentation%5$s', 'blox-widgets' ), '<a href="' . admin_url( 'widgets.php' ) . '">', '<strong>','</strong>', '<a href="https://www.bloxwp.com/documentation/widgets" target="_blank">', '</a>' );?>
+								<?php echo sprintf( __( 'To add more widgets, navigate to the admin %1$sWidgets%5$s page and place additional widgets in the %2$sBlox Widgets%3$s widget area. The order that selected widget are shown on the frontend is managed on the Widgets page. For more information, review the widgets %4$sdocumentation%5$s.', 'blox-widgets' ), '<a href="' . admin_url( 'widgets.php' ) . '">', '<strong>','</strong>', '<a href="https://www.bloxwp.com/documentation/widgets" target="_blank">', '</a>' );?>
 							</div>
 							<?php } else { 
 								echo '<div class="blox-description">' . sprintf( __( 'It doesn\'t look like you have added any widgets yet. Head on over to the %1$sWidgets%5$s page and add a few widgets to the %2$sBlox Widgets%3$s widget area. They will then show up here and you can choose the ones you want to use. For more information, check out the %4$sWidgets Documentation%5$s', 'blox-widgets' ), '<a href="' . admin_url( 'widgets.php' ) . '">', '<strong>','</strong>', '<a href="https://www.bloxwp.com/documentation/widgets" target="_blank">', '</a>' ) . '</div>'; 
