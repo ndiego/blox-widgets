@@ -14,3 +14,9 @@ There are a number of ways you can get help with the Widgets Addon:
 ### Find a bug or have a feature request?
 
 We would love to hear from you! If you find a bug or have a feature request, please send in a support ticket through [Your Account](https://www.bloxwp.com/your-account/?utm_source=blox-widgets&utm_medium=plugin&utm_content=github-readme-links&utm_campaign=Blox_Addon_Links). Or better yet, add it to the [issue tracker](https://github.com/ndiego/blox-scheduler/issues) here on Github. Either way, please be clear and detailed in you communication. If submitting a bug, be sure to provide instructions on how to replicate the issue you are having. Also provide the theme name and PHP version if possible.
+
+### Changelog
+
+##### Version 1.0.1 – 2019-06-27
+* Fixed conflict with Genesis 3.x
+

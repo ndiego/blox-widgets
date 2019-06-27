@@ -5,7 +5,7 @@
  * Description: Enables the Widgets Addon for Blox
  * Author:      Nick Diego
  * Author URI:  http://www.outermostdesign.com
- * Version:     1.0.0
+ * Version:     1.0.1
  * Text Domain: blox-widgets
  * Domain Path: languages
  *
@@ -42,8 +42,8 @@ function blox_load_widgets_addon() {
 	if ( ! class_exists( 'Blox_Main' ) || class_exists( 'Blox_Widgets_Main' ) ) {
 		return;
 	}
-	
-	
+
+
 	/**
 	 * Main plugin class.
 	 *
@@ -80,7 +80,7 @@ function blox_load_widgets_addon() {
 		 * @var string
 		 */
 		public $plugin_name = 'Widgets Addon';
-		
+
 		/**
 		 * Unique plugin slug identifier.
 		 *
@@ -108,24 +108,24 @@ function blox_load_widgets_addon() {
 
 			// Load the plugin textdomain.
 			add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
-			
+
 			// Add additional links to the plugin's row on the admin plugin page
 			add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
-			
+
 			// Initialize addon's license settings field
 			add_action( 'init', array( $this, 'license_init' ) );
-			
+
 			// Register the Blox widget area
 			add_action( 'init', array( $this, 'register_blox_widget_area' ) );
-			
+
 			// Add the Widgets content type, format settings, and save...
 			add_filter( 'blox_content_type', array( $this, 'add_widgets_content' ), 20 );
 			add_action( 'blox_get_content_widgets', array( $this, 'get_widgets_content' ), 10, 4 );
 			add_filter( 'blox_save_content_widgets', array( $this, 'save_widgets_content' ), 10, 3 );
-			
+
 			// Print widget content on the frontend
 			add_action( 'blox_print_content_widgets', array( $this, 'print_widgets_content' ), 10, 4 );
-	
+
 			// Let Blox know the addon is active
 			add_filter( 'blox_get_active_addons', array( $this, 'notify_of_active_addon' ), 10 );
 		}
@@ -173,32 +173,32 @@ function blox_load_widgets_addon() {
 
 			return $links;
 		}
-	
-		
+
+
 		/**
 		 * Load license settings
 		 *
 		 * @since 1.0.0
 		 */
 		public function license_init() {
-			
+
 			// Setup the license
 			if ( class_exists( 'Blox_License' ) ) {
 				$blox_widgets_addon_license = new Blox_License( __FILE__, $this->plugin_name, $this->version, 'Nicholas Diego', 'blox_widgets_addon_license_key', 'https://www.bloxwp.com', 'addons' );
-			}	
+			}
 		}
-		
-		
+
+
 		/**
 		 * Register the Blox widget area
 		 *
 		 * @since 1.0.0
 		 */
 		public function register_blox_widget_area() {
-		
+
 			// Only run if Genesis is active...
-			if ( function_exists( 'genesis_pre' ) ) {
-			
+			if ( function_exists( 'genesis_load_framework' ) ) {
+
 				// Use builtin Genesis function to register widget area
 				genesis_register_widget_area(
 					array(
@@ -233,7 +233,7 @@ function blox_load_widgets_addon() {
 		 * @param bool $global        The block state
 		 */
 		public function get_widgets_content( $id, $name_prefix, $get_prefix, $global ) {
-	
+
 			global $wp_registered_widgets;
 			?>
 
@@ -244,35 +244,35 @@ function blox_load_widgets_addon() {
 					<tr>
 						<th scope="row"><?php _e( 'Available Widgets', 'blox-widgets' ); ?></th>
 						<td>
-							<?php 
-					
+							<?php
+
 							$sidebar_id       = 'blox-widgets';
 							$sidebars_widgets = wp_get_sidebars_widgets();
-					
+
 							if ( ! empty ( $sidebars_widgets[$sidebar_id] ) ) {
-					
+
 							?>
 							<div class="blox-checkbox-container">
 								<ul>
-								<?php 
-					
+								<?php
+
 									foreach ( (array) $sidebars_widgets[$sidebar_id] as $widget_id ) {
-								
+
 										// Make sure our widget is in the registered widgets array
 										if ( ! isset( $wp_registered_widgets[$widget_id] ) ) continue;
 										?>
 										<li>
 											<label>
-								
+
 											<input type="checkbox" name="<?php echo $name_prefix; ?>[widgets][selection][]" value="<?php echo $widget_id; ?>" <?php echo ! empty( $get_prefix['widgets']['selection'] ) && in_array( $widget_id, $get_prefix['widgets']['selection'] ) ? 'checked="checked"' : ''; ?> /> <?php echo $wp_registered_widgets[$widget_id]['name']; ?>
-											<?php							
+											<?php
 											if ( isset( $wp_registered_widgets[$widget_id]['params'][0]['number'] ) ) {
-						
+
 												// Retrieve optional set title if the widget has one (code thanks to qurl: Dynamic Widgets)
 												$number      = $wp_registered_widgets[$widget_id]['params'][0]['number'];
 												$option_name = $wp_registered_widgets[$widget_id]['callback'][0]->option_name;
 												$option      = get_option( $option_name );
-						
+
 												// if a title was found, print it
 												if ( ! empty( $option[$number]['title'] ) ) {
 													echo ': <span class="in-widget-title">' . $option[$number]['title'] . '</span>';
@@ -290,8 +290,8 @@ function blox_load_widgets_addon() {
 							<div class="blox-description" style="margin-top:15px">
 								<?php echo sprintf( __( 'To add more widgets, navigate to the admin %1$sWidgets%5$s page and place additional widgets in the %2$sBlox Widgets%3$s widget area. The order that selected widget are shown on the frontend is managed on the Widgets page. For more information, review the widgets %4$sdocumentation%5$s.', 'blox-widgets' ), '<a href="' . admin_url( 'widgets.php' ) . '">', '<strong>','</strong>', '<a href="https://www.bloxwp.com/documentation/widgets" target="_blank">', '</a>' );?>
 							</div>
-							<?php } else { 
-								echo '<div class="blox-description">' . sprintf( __( 'It doesn\'t look like you have added any widgets yet. Head on over to the %1$sWidgets%5$s page and add a few widgets to the %2$sBlox Widgets%3$s widget area. They will then show up here and you can choose the ones you want to use. For more information, check out the %4$sWidgets Documentation%5$s', 'blox-widgets' ), '<a href="' . admin_url( 'widgets.php' ) . '">', '<strong>','</strong>', '<a href="https://www.bloxwp.com/documentation/widgets" target="_blank">', '</a>' ) . '</div>'; 
+							<?php } else {
+								echo '<div class="blox-description">' . sprintf( __( 'It doesn\'t look like you have added any widgets yet. Head on over to the %1$sWidgets%5$s page and add a few widgets to the %2$sBlox Widgets%3$s widget area. They will then show up here and you can choose the ones you want to use. For more information, check out the %4$sWidgets Documentation%5$s', 'blox-widgets' ), '<a href="' . admin_url( 'widgets.php' ) . '">', '<strong>','</strong>', '<a href="https://www.bloxwp.com/documentation/widgets" target="_blank">', '</a>' ) . '</div>';
 							} ?>
 						</td>
 					</tr>
@@ -329,56 +329,56 @@ function blox_load_widgets_addon() {
 		 * @param string $global      The block state
 		 */
 		public function print_widgets_content( $content_data, $block_id, $block, $global ) {
-	
+
 			$this->block_id_master = $block_id;
-			
+
 			// Check to see if the Blox Widgets area has widgets. If not, do nothing.
 			if ( ! is_active_sidebar( 'blox-widgets' ) ) {
 				return;
 			}
-	
+
 			// Empty array of additional CSS classes
 			$classes = array();
-	
+
 			// Empty array of blox widget area args
 			$args = array();
-	
+
 			$defaults = apply_filters( 'blox_widget_area_defaults', array(
 				'before'              => genesis_html5() ? '<aside class="blox-widgets widget-area ' . implode( ' ', apply_filters( 'blox_content_widgets_classes', $classes ) ) . '">' . genesis_sidebar_title( 'blox-widgets' ) : '<div class="widget-area">',
 				'after'               => genesis_html5() ? '</aside>' : '</div>',
 				'before_sidebar_hook' => 'blox_before_widget_area',
 				'after_sidebar_hook'  => 'blox_after_widget_area',
 			), 'blox-widgets', $args );
-	
+
 			// Merge our defaults and any "custom" args
 			$args = wp_parse_args( $args, $defaults );
-	
+
 			// Opening widget area markup
 			echo $args['before'];
-	
+
 			// Before widget area hook
 			if ( $args['before_sidebar_hook'] ) {
 				do_action( $args['before_sidebar_hook'] );
 			}
-	
+
 			if ( ! empty( $content_data['widgets']['selection'] ) ) {
 
 				// We need to outout buffer the widget contents
 				ob_start();
 				call_user_func( array( $this, 'blox_display_widgets' ), 'blox-widgets', $content_data, $block_id, $block, $global );
 				$all_widgets = ob_get_clean();
-		
+
 				echo ( $all_widgets );
 
 			} else {
 				_e( 'You forgot to select some widgets to display!', 'blox-widgets' );
 			}
-	
+
 			// After widget area hook
 			if ( $args['after_sidebar_hook'] ) {
 				do_action( $args['after_sidebar_hook'] );
 			}
-	
+
 			// Closing widget area markup
 			echo $args['after'];
 		}
@@ -395,13 +395,13 @@ function blox_load_widgets_addon() {
 		 * @param string $global      The block state
 		 */
 		public function blox_display_widgets( $index, $content_data, $block_id, $block, $global ) {
-	
+
 			global $wp_registered_sidebars, $wp_registered_widgets;
-	
+
 			$widget_prefix    = 'blox_' . $block_id . '_';
 			$sidebar 		  = $wp_registered_sidebars[$index];
 			$sidebars_widgets = wp_get_sidebars_widgets();
-	
+
 			// Bail early if "blox-widgets" does not exist or if we have no widgets in the widget area
 			if ( empty( $sidebar ) || empty( $sidebars_widgets[ $index ] ) || ! is_array( $sidebars_widgets[ $index ] ) ) {
 				return;
@@ -409,14 +409,14 @@ function blox_load_widgets_addon() {
 
 			// Loop through all the widgets in the Blox Widgets sidebar and determine whether to show or not
 			foreach ( (array) $sidebars_widgets[$index] as $id ) {
-		
+
 				// If the widget is not in the registered widgets array, bail...
 				if ( !isset( $wp_registered_widgets[$id] ) ) continue;
-		
+
 				// If the widget is not in our "selected" widgets array, bail...
 				if ( ! in_array( $id, $content_data['widgets']['selection'] ) ) continue;
-		
-				// Build our array of widget parameters 
+
+				// Build our array of widget parameters
 				$params = array_merge(
 					array( array_merge( $sidebar, array( 'widget_id' => $id, 'widget_name' => $wp_registered_widgets[$id]['name'] ) ) ),
 					(array) $wp_registered_widgets[$id]['params']
@@ -469,7 +469,7 @@ function blox_load_widgets_addon() {
 			}
 		}
 
-	
+
 		/**
 		 * Let Blox know this extension has been activated.
 		 *
