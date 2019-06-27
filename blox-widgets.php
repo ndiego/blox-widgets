@@ -70,7 +70,7 @@ function blox_load_widgets_addon() {
 		 *
 		 * @var string
 		 */
-		public $version = '1.0.0';
+		public $version = '1.0.1';
 
 		/**
 		 * The name of the plugin.
