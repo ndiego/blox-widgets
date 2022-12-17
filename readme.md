@@ -1,6 +1,6 @@
 # Blox Widgets Add-on
 
-The Widgets Add-on is an extension of the Wordpress plugin [Blox](https://github.com/ndiego/blox).
+The Widgets Add-on is an extension of the WordPress plugin [Blox](https://github.com/ndiego/blox).
 
 > **Warning**
 > 
